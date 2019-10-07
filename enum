@@ -1,0 +1,56 @@
+import Foundation
+
+// import UIKit
+
+enum TravelClass {
+  case First, Buseness, Economy
+}
+let travel = TravelClass.Buseness
+print(travel)
+// ---------------
+enum Medal {
+    case gold
+    case silver
+    case bronse
+}
+let medal = Medal.bronse
+
+switch medal{
+    case.gold:
+    print("medal gold")
+    case.bronse:
+    print("medal bronse")
+    case.silver: 
+    print("medal silver")
+    default:
+        break
+}
+//---дни недели---
+enum DayWeek{
+    case monday
+    case tuesday
+    case wednesday
+    enum friday{
+        case day
+        case night
+    }
+    case saturday
+    case sunday
+}
+var friday = DayWeek.friday.day
+print(friday)
+//___________разные типы в словаре
+enum Operation {
+    case doble(Double)
+    case integer(Int)
+    case float(Float)
+    case string(String)
+}
+var dictionary: Dictionary<String, Operation> = [
+    "Doble": Operation.doble(22.4),
+    "Ineger": Operation.integer(10),
+    "float": Operation.float(44.1),
+    "String": Operation.string("стока")
+]
+let pr = dictionary["String"]
+print(pr!)
