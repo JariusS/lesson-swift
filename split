@@ -16,3 +16,51 @@ let str = "Hello Bob"
 let strSplit = str.characters.split(" ")
 String(strSplit.first!)
 String(strSplit.last!)
+
+-------------------------------------------
+let longerString: String = "This is a test of the character set splitting system"
+let components = longerString.components(separatedBy: .whitespaces)
+print(components)
+
+-------------------------
+let line = "BLANCHE:   I don't want realism. I want magic!"
+print(line.split(separator: " "))
+print(line.split(separator: " ", maxSplits: 1))//This can split your string into 2 parts
+print(line.split(separator: " ", maxSplits: 2))//This can split your string into 3 parts
+print(line.split(separator: " ", omittingEmptySubsequences: false))//array contains empty strings where spaces were repeated.
+print(line.split(separator: " ", omittingEmptySubsequences: true))//array not contains empty strings where spaces were repeated.
+print(line.split(separator: " ", maxSplits: 4, omittingEmptySubsequences: false))
+print(line.split(separator: " ", maxSplits: 3, omittingEmptySubsequences: true))
+
+---------------------------------
+var fullName: String = "First Last"
+fullName += " " // this will help to see the last word
+
+var newElement = "" //Empty String
+var fullNameArr = [String]() //Empty Array
+
+for Character in fullName.characters {
+    if Character == " " {
+        fullNameArr.append(newElement)
+        newElement = ""
+    } else {
+        newElement += "\(Character)"
+    }
+}
+
+
+var firsName = fullNameArr[0] // First
+
+---------------------------
+let searchInput = "  First \r\n \n \t\t\tMiddle    Last "
+let searchTerms = searchInput 
+    .replacingOccurrences(
+        of: "\\s+",
+        with: " ",
+        options: .regularExpression
+    )
+    .trimmingCharacters(in: .whitespaces)
+    .components(separatedBy: " ")
+
+// searchTerms == ["First", "Middle", "Last"]
+var lastName = fullNameArr[1] // Last
