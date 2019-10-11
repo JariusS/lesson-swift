@@ -1,0 +1,18 @@
+В Swift 3 componentsSeparatedByString и split используется таким образом.
+
+let splitArray = "Hello World".components(separatedBy: " ") // ["Hello", "World"]
+Раскол
+
+let splitArray = "Hello World".characters.split(separator: " ").map(String.init) // ["Hello", "World"]
+
+_________________________________________________
+Swift 4
+let str = "Hello Bob"
+let strSplitArray = str.split(separator: " ")
+strSplitArray.first!    // "Hello"
+strSplitArray.last!     // "Bob"
+Xcode 7.1.1 с Swift 2.1
+let str = "Hello Bob"
+let strSplit = str.characters.split(" ")
+String(strSplit.first!)
+String(strSplit.last!)
