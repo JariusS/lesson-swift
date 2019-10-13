@@ -1,0 +1,33 @@
+import UIKit
+
+class ParensClass {
+    var array = [String]()
+    var name = ""
+    var age = 20
+    
+    init(name: String, age: Int){
+        self.name = name
+        self.age = age
+    }
+}
+
+class Son: ParensClass{
+    func method(name: String){
+        print("Hello \(name)"  )
+    }
+}
+var sonClass = Son(name: "Iron", age: 30 )//экземпляр класса
+sonClass.name//свойства класса
+sonClass.method(name: "Jack")//метод экземпляра класса
+
+sonClass.name = "Bob"
+sonClass.age = 25
+
+//-------------------struct
+struct NameStruct{
+    var name: String
+    var age: Int 
+}
+var str = NameStruct(name: "Max", age: 20)
+str.name = "Bob"
+str.age = 37
