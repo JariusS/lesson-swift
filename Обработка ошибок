@@ -1,0 +1,28 @@
+import Foundation
+import UIKit
+
+enum divError: ErrorType{
+    case DivByZero
+    case DivByMinus
+}
+
+func divide(param1: Int, param2: Int) throws -> Int {
+    if param2 == 0 {
+        throw divError.DivByZero
+    }
+    if param2 < 0{
+        throw divError.DivByMinus
+    }
+    return param1/param2
+}
+try? divide(param1: 10, param2: 2)
+let i: Int? = try? divide(param1: 10, param2: 2)
+
+do {
+    try divide(param1: 10, param2: 0)
+} catch divError.DivByZero {
+    print("Делим на ноль")
+}
+catch divError.DivByMinus {
+    print("Делим на отрицательныое число")
+}
